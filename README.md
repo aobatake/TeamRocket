@@ -2,7 +2,7 @@ Hello, this is Team Rocket's Repository. Team Rocket has members Jennifer, Emily
 
 Andrew is a Sophomore in Computer Engineering. He is a member of the EESAB board. Academic interest include web development, app development, and programming.  
 
-Jennifer is a sophmore in Computer Engineering. She is interested in programming and likes to go hiking and read books. 
+Jennifer is a sophmore in Computer Engineering. She is interested in programming and in her free time likes to go hiking. 
 
 Emily is a sophomore in Computer Engineering. Academic interests include programming and PCB design.
 
