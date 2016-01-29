@@ -4,5 +4,5 @@ Andrew is a Sophomore in Computer Engineering. He is a member of the EESAB board
 
 Jennifer is a sophmore in Computer Engineering. She is interested in programming and likes to go hiking and read books. 
 
-
+Emily is a sophomore in Computer Engineering. Academic interests include programming and PCB design.
 
