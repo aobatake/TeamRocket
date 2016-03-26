@@ -3,13 +3,13 @@
 /* Libraries */
 #include "schema.h"
 #include "config.h"
-#include "sensors.h"
+#include "sensor.h"
 
 /* External Libraries */
 #include <EEPROM.h>
 #include <XBee.h>
 
-#define MAX_SIZE 100
+#define MAX_SIZE 67
 /* Global Variable for Packet */
 extern schema_1 Gpacket;
 

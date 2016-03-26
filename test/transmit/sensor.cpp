@@ -3,7 +3,7 @@
 */
 
 /* Libraries */
-#include "practice.h"
+#include "sensor.h"
 #include "config.h"
 
 /* Set pins */
@@ -38,15 +38,15 @@ long sensorRoofTempdecic(void)
 {
     long value =  0;
     dallas_roof_sen.requestTemperatures();
-    value = dallas_roof_sen.getTempCByIndex(0)*10;
+    value = dallas_roof_sen.getTempCByIndex(0);
     return value;
 }
 
 /*Solar Irradiance */
 long sensorSolarIrrd(void)
 {
- long value = analogRead(PIN_APOGEE_V)*5000.0/1023;
- return value;
+  long sensorValue = analogRead(PIN_APOGEE_V) * 5000.0/1023;
+  return sensorValue;
 }
 
 

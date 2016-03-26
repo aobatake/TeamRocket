@@ -1,5 +1,8 @@
 /* File: schema.h */
 
+/* External Library */
+#include <stdint.h>
+
 /* Schema from the SCEL website Kenny said to use this one */
 typedef struct {
     uint16_t schema;
@@ -10,7 +13,7 @@ typedef struct {
     uint16_t panel_mv[7];  // Panel Voltage (in milli volts)
     uint32_t bmp085_press_pa; // Pressure Value (in pascals)
     uint16_t humidity_centi_pct; //Humidity Value
-    uint16_t apogee_w_m2[35]; // Solar Irradiance Value
+    uint16_t apogee_w_m2[15]; // Solar Irradiance Value
     int16_t dallas_roof_c[7];   //Outside temperature value (celcius)
 } schema_1;
 

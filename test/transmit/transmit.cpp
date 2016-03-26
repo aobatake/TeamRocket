@@ -3,6 +3,7 @@
 /* Libraries */
 #include "transmit.h"
 
+
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * *
 *	Name:	clear_Packet
 *	Returns:	Nothing
@@ -20,7 +21,6 @@ void clear_Packet(void) {
 	Gpacket.uptime_ms = 0;
 	Gpacket.n = 0;
 	Gpacket.bmp085_press_pa = 0;
-	Gpacket.bmp085_temp_decic = 0;
 	Gpacket.humidity_centi_pct = 0;
 
 	/* Clear/init values with multiple points */ 
@@ -29,7 +29,7 @@ void clear_Packet(void) {
 		j = i/4;
 
 		/* Polled every 4 seconds */
-		Gpacket.batt.mv[j] = 0;
+		Gpacket.batt_mv[j] = 0;
 		Gpacket.panel_mv[j] = 0;
 		Gpacket.dallas_roof_c[j] = 0;
 
@@ -46,11 +46,11 @@ void clear_Packet(void) {
 *
 *
 * * * * * * * * * * * * * * * * * * * * * * * * * * * */
-void contruct_Packet(void) {
+void construct_Packet(void) {
 	
 	/*index Variable */
 	int n = Gpacket.n;
-	
+	Gpacket.schema = 86;
 	/* Initialize  Sensor Variables */
  	long BatterymV = 0;
     long SolarIrrmV = 0;
@@ -64,8 +64,8 @@ void contruct_Packet(void) {
 
 
     /* Get Sensor Data */
- 	BatterymV = sensorsBattery();
-    PanelmV = sensorPanelmV();
+ 	/*BatterymV = sensorsBattery();*/
+    /*PanelmV = sensorPanelmV();*/
     SolarIrrmV = sensorPressure();
     Humiditypct = sensorSolarIrrd();
     Pressurepa = sensorHumidity();
@@ -76,17 +76,17 @@ void contruct_Packet(void) {
     Gpacket.uptime_ms = uptime;
 
     /* Pack power data */
-    Gpacket.batt_mv[n/4] = BatterymV;
-    Gpacket.panel_mv[n/4] = PanelmV;
+    /*Gpacket.batt_mv[n/4] = BatterymV;*/
+    /*Gpacket.panel_mv[n/4] = PanelmV;*/
     
     /* Pack sensor data */
     Gpacket.bmp085_press_pa = Pressurepa;
     Gpacket.humidity_centi_pct = Humiditypct;
     Gpacket.apogee_w_m2[n] = SolarIrrmV;
-    G_BINpacket.dallas_roof_c[n/4] = Dallas_RoofTemp_c;
+    Gpacket.dallas_roof_c[n/4] = Dallas_RoofTemp_c;
 
     /* Increment index */
-    G_BINpacket.n += 1;
+    Gpacket.n += 1;
 
 }
 
@@ -116,13 +116,13 @@ void transmit_Packet(void) {
     memset(payload, '\0', sizeof(payload));
 
     /* Obtain length of the packet */
-    len = sizeof(G_BINpacket);
+    len = sizeof(Gpacket);
 
     /* Transfer information into payload */
-    memcpy(payload, &G_BINpacket, len);
+    memcpy(payload, &Gpacket, len);
 
    /* Transfer the payload */
     ZBTxRequest zbTx = ZBTxRequest(addr64, payload, len);
-    G_xbee.send(zbTx); //!!Prints packet to serial monitor
+    Gxbee.send(zbTx); //!!Prints packet to serial monitor
 
 }
