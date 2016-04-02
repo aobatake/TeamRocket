@@ -23,7 +23,7 @@ long sensorSolarIrrd(void);
 long sensorHumidity(void);         
 long sensorRoofTempdecic(void);     /* Temperature sensor*/          
 
-/*
+
 long sensorBattery(void);
-long sensorPanelmV(void)
-*/
+long sensorPanelmV(void);
+

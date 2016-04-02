@@ -54,21 +54,21 @@ long sensorSolarIrrd(void)
 
 
 /*Battery */
-/*
+
 long sensorBattery(void)
 {
-    long value = analogRead(PIN_BATT)*5000.0/1023;
+    long value = analogRead(PIN_BATT_V)*5000.0/1023;
     return value;
 }
-*/
+
 
 /* Solar Panel */
-/*
+
 long sensorPanelmV(void)
 {
     long value = 2*analogRead(PIN_SOLAR_V)*5000.0/1023;
     return value;
 }
-*/
+
 
 

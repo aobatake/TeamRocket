@@ -24,7 +24,7 @@
 #define PIN_XBEE_TX 1
 #define PIN_XBEE_RX 0
 #define PIN_XBEE_SLEEP 13
-#define _PIN_XBEE_EN 4
+
 
 /* Receiver/Transmitter */
 #define PIN_RX 0

@@ -21,10 +21,7 @@
 
 /* Create Xbee Object */
 XBee Gxbee = XBee();
-
-
 schema_1 Gpacket;
-
 
 /******************************************
  *
@@ -41,9 +38,11 @@ void setup(){
     /* Serial Initialization*/
     Serial.begin(9600);
     Gxbee.begin(Serial);
+    int G_i = 0;
+    sensor_init();
 
 
-    pinMode(_PIN_XBEE_EN, OUTPUT);
+    /*pinMode(_PIN_XBEE_EN, OUTPUT);*/
 
 
     /* Packet initialization */
@@ -73,7 +72,7 @@ void loop(){
     /* Transmit the packet */
 
     transmit_Packet();
-
+    Serial.println(F("\nPacket Transmitted.\n"));
     /* Necessary delay to prevent overloading receiving end */
-    delay(5000);
+    delay(6000);
 }

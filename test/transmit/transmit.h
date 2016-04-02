@@ -9,7 +9,7 @@
 #include <EEPROM.h>
 #include <XBee.h>
 
-#define MAX_SIZE 67
+#define MAX_SIZE 80
 /* Global Variable for Packet */
 extern schema_1 Gpacket;
 
@@ -28,6 +28,9 @@ void construct_Packet(void);
 
 /* Transmit Packet */
 void transmit_Packet(void);
+
+/* Test Packet */
+void construct_Test(void);
 
 #endif
 
