@@ -4,9 +4,10 @@
 
 /* Libraries */
 #include "config.h"
-#include "sensors.h"
+#include "sensor.h"
 #include "transmit.h"
 #include "schema.h"
+#include "routine.h"
 
 /* External Libraries */
 #include <SHT1x.h>
@@ -17,13 +18,13 @@
 #include <EEPROM.h>
 
 /* Global Variables for Packet */
-uint8_t GPacket[MAX_SIZE];
+schema_1 Gpacket;
 
 /* Global Xbee object */
 XBee Gxbee = XBee();
 
 /* Global count variable */
-int G_count;
+int G_count = 0;
 
 void setup() {
 /* Initialization */
@@ -38,7 +39,6 @@ clear_Packet();
 
 
 void loop() {
-
   routine(&G_count);
 }
 

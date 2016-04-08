@@ -11,13 +11,13 @@ void routine(int *count)
     unsigned long transmit_timer = millis();
     
     /* Poll sensors and construct packet */
-    construct_Packet();
+    construct_Packet(*count);
 
     /* Increment the poll count */
-    (*count)++:
+    (*count)++;
 
     /* Transmit after 3 polls */
-    if((*count)>= 3)
+    if((*count)>= 60)
     {
       transmit_Packet();
       clear_Packet();
@@ -26,7 +26,7 @@ void routine(int *count)
     }
 
    /* Wait to ensure we poll exactly every second */
-   whiile(millis() - transmit_timer) <= wait_ms);
+   while((millis() - transmit_timer) <= wait_ms);
   
 }
 
