@@ -3,7 +3,16 @@
 /* Libraries */
 #include "routine.h"
 
-/* routine */
+
+
+/* * * * * * * * * * * * * * * * * * * * *
+ * Name: routine                         *
+ * Returns: Nothing                      *
+ * Parameter: Global Count               *
+ * Description: Constructs and transmits *
+ * a packet every 60 seconds.            *
+ *                                       *
+ * * * * * * * * * * * * * * * * * * * * */
 void routine(int *count)
 {
     /* Variable Initialization */

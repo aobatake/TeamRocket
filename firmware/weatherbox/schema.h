@@ -6,7 +6,7 @@
 #ifndef SCHEMA_H
 #define SCHEMA_H
 
-/* Schema from the SCEL website Kenny said to use this one */
+/* Schema for Weatherbox Packets */
 typedef struct {
     uint16_t schema;
     uint16_t address;    // Address of Arduino 

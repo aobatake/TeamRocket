@@ -34,7 +34,7 @@ long sensorPressure(void)
 }
 
 /* Temperature Sensor */
-long sensorRoofTempdecic(void)
+long sensorRoofTempdecic(void)      
 {
     long value =  0;
     dallas_roof_sen.requestTemperatures();
@@ -54,7 +54,6 @@ long sensorSolarIrrd(void)
 
 
 /*Battery */
-
 long sensorBattery(void)
 {
     long value = analogRead(PIN_BATT_V)*5000.0/1023;

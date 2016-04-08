@@ -10,6 +10,7 @@
 #include <XBee.h>
 
 #define MAX_SIZE 80
+
 /* Global Variable for Packet */
 extern schema_1 Gpacket;
 
@@ -24,7 +25,7 @@ extern XBee Gxbee;
 void clear_Packet(void);
 
 /*Construct Packet */
-void construct_Packet(int count);
+void construct_Packet(int Gcount);
 
 /* Transmit Packet */
 void transmit_Packet(void);

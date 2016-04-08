@@ -14,16 +14,14 @@ extern OneWire oneWire;
 extern DallasTemperature dallas_roof_sen;
 extern Adafruit_BMP085 bmp085;
 
-/*Initialization */
+/*Initialization Function */
 void sensor_init(void);
 
-/* Retreiving the data */
+/* Sensor Functions */
 long sensorPressure(void);
 long sensorSolarIrrd(void);
 long sensorHumidity(void);         
-long sensorRoofTempdecic(void);     /* Temperature sensor*/          
-
-
+long sensorRoofTempdecic(void);             
 long sensorBattery(void);
 long sensorPanelmV(void);
 

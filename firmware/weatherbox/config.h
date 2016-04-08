@@ -11,20 +11,16 @@
 #define PIN_APOGEE_V A2
 
 /* Temperature */
-/*#define PIN_AMB_TEMP */
 #define PIN_ROOF_TEMP 3
-
 
 /* Panel and Battery Voltage */
 #define PIN_SOLAR_V A1
 #define PIN_BATT_V A3
 
-
 /* XBEE */
 #define PIN_XBEE_TX 1
 #define PIN_XBEE_RX 0
 #define PIN_XBEE_SLEEP 13
-
 
 /* Receiver/Transmitter */
 #define PIN_RX 0
